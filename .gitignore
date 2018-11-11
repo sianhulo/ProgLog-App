@@ -1,0 +1,6 @@
+# Environment
+venv/**
+**/__pycache__
+
+# Configuration
+app/settings.py
