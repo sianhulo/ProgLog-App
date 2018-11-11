@@ -24,7 +24,9 @@ def create_app():
         return render_template('404.html'), 404
 
     from app.mod_auth.controllers import mod_auth as auth_module
+    from app.mod_tests.controllers import mod_tests as tests_module
     
     app.register_blueprint(auth_module)
+    app.register_blueprint(tests_module)
 
     return app
