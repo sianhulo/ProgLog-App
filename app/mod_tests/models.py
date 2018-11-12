@@ -50,7 +50,7 @@ class Node(Base):
                               db.ForeignKey('types.id'),
                               nullable = False)
     subject_id    = db.Column(db.Integer, 
-                              db.ForeignKey('types.id'),
+                              db.ForeignKey('subjects.id'),
                               nullable = False)
 
     def __init__(self, answer, parent, score):

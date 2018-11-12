@@ -1,9 +1,16 @@
 from flask_wtf import FlaskForm
-from wtforms import TextField, PasswordField, BooleanField
-from wtforms.validators import Required, Email, EqualTo
+from wtforms import StringField, PasswordField
+from wtforms.validators import InputRequired, Email, EqualTo
 
 class LoginForm(FlaskForm):
-    email    = TextField('Email', [Email(),
-                                   Required(message='¿Olvidaste tu email?')])
-    password = PasswordField('Password', [
-                                   Required(message='Debe colocar la contraseña.')])
+    email    = StringField('Email', [Email(),
+                                     InputRequired(message='¿Olvidaste tu email?')])
+    password = PasswordField('Password', [InputRequired(message='Debe colocar la contraseña.')])
+
+class SignupForm(FlaskForm):
+    email    = StringField('Email', [Email(),
+                                     InputRequired(message='¿Olvidaste tu email?')])
+    password = PasswordField('Password', [InputRequired(message='Debe colocar la contraseña.')])
+    confirm  = PasswordField('Confirm Password', [EqualTo('password', message="Las contraseñas no coinciden."),
+                                                  InputRequired(message='Debe colocar la contraseña.')])
+    name     = StringField('Name', [InputRequired(message="Debe colocar un nombre.")])

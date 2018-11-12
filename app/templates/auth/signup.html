@@ -1,5 +1,5 @@
 {% extends "layouts/auth_layout.html" %}
-{% block title %} Iniciar Sesión {% endblock title %}
+{% block title %} Registro {% endblock title %}
 {% block content %}
 <div>
     <div>
@@ -33,24 +33,25 @@
                 <small id="emailHelp" class="form-text text-muted">No compartiremos tu correo con nadie. :-)</small>
             </div>
             <div class="form-group">
+                <label for="inputName">Nombre</label>
+                <input type="text" class="form-control" id="inputName" aria-describedby="inputName" placeholder="Inserte nombre" name="name">
+            </div>
+            <div class="form-group">
                 <label for="inputPassword">Contraseña</label>
                 <input type="password" class="form-control" id="inputPassword" aria-describedby="inputPassword" placeholder="Inserte contraseña" name="password">
             </div> 
+            <div class="form-group">
+                <label for="inputConfirm">Confirmar Contraseña</label>
+                <input type="password" class="form-control" id="inputConfirm" aria-describedby="inputConfirm" placeholder="Inserte contraseña nuevamente" name="confirm">
+            </div> 
+            {{ form.csrf_token }}
             <div class="row">
                 <div class="col-sm-6">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">Recuérdame</label>
-                    </div>
+                    <button type="submit" class="btn btn-primary"  name="submit">Registrarse</button>
                 </div>
                 <div class="col-sm-6">
-                    <a href="#">¿Olvidaste la contraseña?</a>
+                    <a href="/auth/signin/" role="button">Volver a inicio de sesión</a>
                 </div>
-            </div>
-            {{ form.csrf_token }}
-            <button type="submit" class="btn btn-primary"  name="submit">Iniciar Sesión</button>
-            <div class="signup-link">
-                <a href="/auth/signup/" role="button">Crear una cuenta</a>
             </div>
         </form>
     </div>

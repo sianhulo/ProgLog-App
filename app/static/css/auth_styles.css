@@ -5,3 +5,8 @@
     align-items: center;
     height: 100vh;
 }
+
+.signup-link {
+    text-align: right;
+    margin-top: 5px;
+}
