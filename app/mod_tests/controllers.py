@@ -22,4 +22,4 @@ mod_tests = Blueprint('tests',
 
 @mod_tests.route('/', methods=['GET'])
 def home():
-    return 'You\'ve been logged in successfully!', 200
+    return '¡Iniciaste sesión correctamente!', 200
