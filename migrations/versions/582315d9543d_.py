@@ -78,8 +78,8 @@ def upgrade():
 
     op.bulk_insert(nodes, [
         {'subject_id': 1, 'type_id': 1, 'score': 10, 'answer_parent': 'None', 'parent_node': 0},
-        {'subject_id': 1, 'type_id': 2, 'score': -5, 'answer_parent': 'c = 15', 'parent_node': 1},
-        {'subject_id': 1, 'type_id': 1, 'score': 10, 'answer_parent': 'c = \'15\'', 'parent_node': 1},
+        {'subject_id': 1, 'type_id': 1, 'score': -5, 'answer_parent': 'c = 15', 'parent_node': 1},
+        {'subject_id': 1, 'type_id': 2, 'score': 10, 'answer_parent': 'c = \'15\'', 'parent_node': 1},
         {'subject_id': 1, 'type_id': 2, 'score': -5, 'answer_parent': 'Error', 'parent_node': 1},
     ])
     # ### end Alembic commands ###
