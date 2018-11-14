@@ -2,7 +2,7 @@
 {% block title %} Dashboard {% endblock title %}
 
 {% block content %}
-<div id="editor-container", style="width: 55%; height: 50%;">
+<div id="editor-container", style="width: 60%; height: 50%;">
 </div>
 
 <div id="editor-code">
@@ -11,7 +11,7 @@
 {% endblock content %}
 
 {% block javascript %}
-<script type="text/javascript"> 
+<script type="text/javascript">
     code = document.getElementById('editor-code').textContent;
 
     require.config({ paths: { 'vs': '/static/vs' }})

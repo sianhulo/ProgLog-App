@@ -6,8 +6,7 @@ from flask import (
     g, 
     session,
     redirect,
-    url_for,
-    jsonify
+    url_for
 )
 from app.mod_tests.models import (
     Type,
