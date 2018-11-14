@@ -1,0 +1,13 @@
+{% extends "layouts/dashboard_layout.html" %}
+{% block title %} Dashboard {% endblock title %}
+{% block content %}
+    <ul class="list-group">
+    {% for subject in subjects %}
+        <li class="list-group-item">
+            <a href="{{ url_for('tests.subject_test', subject_name=subject.name.replace(' ', '+')) }}">
+                {{ subject.name }}
+            </a>
+        </li> 
+    {% endfor %}
+    </ul>
+{% endblock content %}

@@ -33,7 +33,7 @@ def signin():
         if user is not None and check_password_hash(user.password, form.password.data):
             session['user_id'] = user.id
             flash('Bienvenido, %s' % user.name)
-            return redirect(url_for('tests.home'))
+            return redirect(url_for('tests.dashboard'))
         flash('Email o contraseña incorrectos.', 'error')
     
     return render_template('auth/signin.html', form=form)

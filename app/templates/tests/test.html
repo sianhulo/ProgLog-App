@@ -1,0 +1,32 @@
+{% extends "layouts/dashboard_layout.html" %}
+{% block title %} Dashboard {% endblock title %}
+
+{% block content %}
+<div id="editor-container", style="width: 55%; height: 50%;">
+</div>
+
+<div id="editor-code">
+{{ code }}
+</div>
+{% endblock content %}
+
+{% block javascript %}
+<script type="text/javascript"> 
+    code = document.getElementById('editor-code').textContent;
+
+    require.config({ paths: { 'vs': '/static/vs' }})
+    require(['vs/editor/editor.main'], function() {
+        var editor = monaco.editor.create(document.getElementById('editor-container'), {
+            value: code,
+            language: 'cpp',
+            theme: 'vs-dark',
+            readOnly: true,
+            scrollbar: {
+                vertical: 'auto',
+                horizontal: 'auto'
+            },
+            automaticLayout: true
+        });
+    });
+</script>
+{% endblock javascript %}

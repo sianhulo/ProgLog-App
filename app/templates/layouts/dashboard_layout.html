@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock title %} - ProgLog</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard_styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-grid.min.css') }}">
+</head>
+<body>
+    <div id="content">
+    {% block content %}
+    {% endblock content %}
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script type="text/javascript" src="https://unpkg.com/popper.js@1.14.5/dist/umd/popper.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='vs/loader.js') }}"></script>
+    {% block javascript %}
+    {% endblock javascript %}
+</body>
+</html>
