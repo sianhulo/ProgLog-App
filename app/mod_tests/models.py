@@ -26,7 +26,7 @@ class Subject(Base):
     __tablename__ = 'subjects'
 
     name             = db.Column(db.String(120), nullable = False)
-    prerequisite     = db.Column(db.Integer, nullable = True)
+    prerequisite     = db.Column(db.Integer, nullable = False)
     minimum_approved = db.Column(db.Integer, nullable = False)
     nodes            = db.relationship('Node',
                                        lazy = 'select',
@@ -44,7 +44,7 @@ class Node(Base):
     __tablename__ = 'nodes'
     
     answer_parent = db.Column(db.String(250), nullable = False)
-    parent_node   = db.Column(db.Integer, nullable = True)
+    parent_node   = db.Column(db.Integer, nullable = False)
     score         = db.Column(db.Integer, nullable = False)
     type_id       = db.Column(db.Integer, 
                               db.ForeignKey('types.id'),
